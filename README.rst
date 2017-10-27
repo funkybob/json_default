@@ -2,8 +2,8 @@ Overview
 ========
 
 Whilst looking about to see if anyone had proposed a __json__ protocol for
-Python, I found `https://hynek.me/articles/serialization/`_ and it struct me as
-so simple and obviously right.
+Python, I found `this article <https://hynek.me/articles/serialization/>`_ and
+it struck me as so simple and obviously right.
 
 So, I decided to provide a lib to make it easier for everyone.
 
