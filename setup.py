@@ -35,10 +35,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with io.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
-# Load the package's __version__.py module as a dictionary.
-about = {}
-with open(os.path.join(here, NAME, '__version__.py')) as f:
-    exec(f.read(), about)
+from json_default import __version__
 
 
 class UploadCommand(Command):
@@ -77,7 +74,7 @@ class UploadCommand(Command):
 # Where the magic happens:
 setup(
     name=NAME,
-    version=about['__version__'],
+    version=__version__,
     description=DESCRIPTION,
     long_description=long_description,
     author=AUTHOR,

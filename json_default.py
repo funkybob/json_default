@@ -14,19 +14,19 @@ def default(obj):
     return str(obj)
 
 
-@singledispatch.register(datetime.datetime)
-def default(obj):
+@default.register(datetime.datetime)
+def _(obj):
     r = obj.replace(microseconds=0).isoformat()
     if r.endswith('+00:00'):
         r = r[:-6] + 'Z'
     return r
 
 
-@singledispatch.register(datetime.date)
-def default(obj):
+@default.register(datetime.date)
+def _(obj):
     return obj.isoformat()
 
 
-@singledispatch.register(datetime.time)
-def default(obj):
+@default.register(datetime.time)
+def _(obj):
     return obj.replace(microseconds=0).isoformat()
