@@ -18,6 +18,10 @@ class DefaultTestCase(TestCase):
         d = datetime.datetime(2017, 6, 8, 12, 23, 1, 1231)
         self.assertEqual(self.encode({'when': d}), '{"when": "2017-06-08T12:23:01"}')
 
+    def test_datetime_tz(self):
+        d = datetime.datetime(2017, 6, 8, 12, 23, 1, 1231, tzinfo=datetime.timezone.utc)
+        self.assertEqual(self.encode({'when': d}), '{"when": "2017-06-08T12:23:01Z"}')
+
     def test_date(self):
         d = datetime.date(2016, 6, 8)
         self.assertEqual(self.encode({'when': d}), '{"when": "2016-06-08"}')
