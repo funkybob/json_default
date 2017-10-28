@@ -16,7 +16,7 @@ def default(obj):
 
 @default.register(datetime.datetime)
 def _(obj):
-    r = obj.replace(microseconds=0).isoformat()
+    r = obj.replace(microsecond=0).isoformat()
     if r.endswith('+00:00'):
         r = r[:-6] + 'Z'
     return r
@@ -29,4 +29,4 @@ def _(obj):
 
 @default.register(datetime.time)
 def _(obj):
-    return obj.replace(microseconds=0).isoformat()
+    return obj.replace(microsecond=0).isoformat()
