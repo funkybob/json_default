@@ -32,6 +32,6 @@ If you have more types you want to define serialisation for, just add them:
    from json_default import default
 
 
-   @default.register(mytype):
+   @default.register(mytype)
    def _(obj):
        ...
