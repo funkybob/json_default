@@ -1,4 +1,7 @@
 venv
 *.pyc
-.coverage`
+.coverage
 htmlcov/
+build/
+dist
+*.egg-info
