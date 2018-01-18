@@ -35,3 +35,12 @@ If you have more types you want to define serialisation for, just add them:
    @default.register(mytype)
    def _(obj):
        ...
+
+Defaults
+--------
+
+Built in, json_default provides handlers for:
+
+- datetime.datetime (isoformat with space, '+00:00' converted to 'Z')
+- datetime.date (isoformat)
+- datetime.time (isoformat)
